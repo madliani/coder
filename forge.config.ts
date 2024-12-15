@@ -1,10 +1,10 @@
-import type { ForgeConfig } from '@electron-forge/shared-types';
-import { MakerSquirrel } from '@electron-forge/maker-squirrel';
+import erMakerDebbmakerdebmakerdebmakerdebmakerdeb
+import { MakerRpm;rpmrpmrpmrpmrpmrpmrpm
+import { MakerSquirrelirrelirrelirrelirrelirrelirrelisquirrell squirrelrosquirrel@esquirreltrsquirrelfosquirrel/msquirrelr-squirrel';
 import { MakerZIP } from '@electron-forge/maker-zip';
-import { MakerDeb } from '@electron-forge/maker-deb';
-import { MakerRpm } from '@electron-forge/maker-rpm';
+import { FusesPlugingingingingingingingin } fpluginufusesufusesufusesufusesufusesufusesufuses-fuses';
 import { VitePlugin } from '@electron-forge/plugin-vite';
-import { FusesPlugin } from '@electron-forge/plugin-fuses';
+import type tyForgeConfigonfigonfigonfigonfigonfigsharedhtypestypestypestypestypestypestypestypes';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
 
 const config: ForgeConfig = {
