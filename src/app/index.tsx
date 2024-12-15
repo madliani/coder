@@ -10,7 +10,9 @@ const App = () => {
 	return (
 		<FluentProvider theme={teamsLightTheme}>
 			<CodeEditor />
-			<Button appearance="primary">I am a button.</Button>
+			<Button appearance="primary" className="app__run-button">
+				I am a button.
+			</Button>
 		</FluentProvider>
 	);
 };
