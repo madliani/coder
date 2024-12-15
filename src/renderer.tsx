@@ -26,8 +26,17 @@
  * ```
  */
 
-import "./index.css";
+import {
+	Button,
+	FluentProvider,
+	teamsLightTheme,
+} from "@fluentui/react-components";
+import { createRoot } from "react-dom/client";
 
-console.log(
-	'👋 This message is being logged by "renderer.ts", included via Vite',
+const root = document.getElementById("root");
+
+createRoot(root).render(
+	<FluentProvider theme={teamsLightTheme}>
+		<Button appearance="primary">I am a button.</Button>
+	</FluentProvider>,
 );

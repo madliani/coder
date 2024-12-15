@@ -43,6 +43,7 @@
 	"author": "madliani",
 	"license": "MIT",
 	"dependencies": {
+		"@fluentui/react-components": "^9.56.5",
 		"electron-squirrel-startup": "^1.0.1",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0"
