@@ -9,7 +9,7 @@
 		"package": "electron-forge package",
 		"make": "electron-forge make",
 		"publish": "electron-forge publish",
-		"lint": "biome check --write ./src",
+		"lint": "oxlint --allow all ./src && biome check --write ./src",
 		"format": "biome format --write ./src"
 	},
 	"devDependencies": {
@@ -31,6 +31,7 @@
 		"electron": "33.3.0",
 		"eslint": "^9.17.0",
 		"eslint-plugin-import": "^2.31.0",
+		"oxlint": "^0.15.2",
 		"semver": "^7.6.3",
 		"ts-node": "^10.9.2",
 		"typescript": "~5.7.2",
