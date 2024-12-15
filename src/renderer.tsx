@@ -32,11 +32,13 @@ import {
 	teamsLightTheme,
 } from "@fluentui/react-components";
 import { createRoot } from "react-dom/client";
+import { CodeEditor } from "./components/CodeEditor";
 
 const root = document.getElementById("root");
 
 createRoot(root).render(
 	<FluentProvider theme={teamsLightTheme}>
+		<CodeEditor />
 		<Button appearance="primary">I am a button.</Button>
 	</FluentProvider>,
 );
