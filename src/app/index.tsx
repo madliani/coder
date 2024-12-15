@@ -4,6 +4,7 @@ import {
 	teamsLightTheme,
 } from "@fluentui/react-components";
 import { CodeEditor } from "../components/CodeEditor";
+import "./index.css";
 
 const App = () => {
 	return (
