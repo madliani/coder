@@ -35,5 +35,6 @@
   "license": "MIT",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
-  }
+  },
+  "packageManager": "yarn@4.5.3"
 }
