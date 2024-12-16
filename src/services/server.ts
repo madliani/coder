@@ -7,6 +7,7 @@ export const server = () => {
 
 			this.post("/execute", (_, req) => {
 				const fromClient = JSON.parse(req.requestBody);
+				const status = Math.random() * 10 > 5 ? "success" : "fail";
 
 				if (typeof fromClient !== "object") {
 					console.error("The client request body is not object.");
@@ -18,10 +19,27 @@ export const server = () => {
 					return new Response(code, headers, data);
 				}
 
-				return {
-					status: "success",
-					output: "Hello, World!",
-				};
+				switch (status) {
+					case "success": {
+						return {
+							status: "success",
+							output: "Hello, World!",
+						};
+					}
+
+					case "fail": {
+						console.error("SyntaxError: Unexpected token");
+
+						const code = 400;
+						const headers = {};
+						const data = {
+							status: "error",
+							error: "SyntaxError: Unexpected token",
+						};
+
+						return new Response(code, headers, data);
+					}
+				}
 			});
 		},
 	});
