@@ -2,7 +2,11 @@ import { Button } from "@fluentui/react-components";
 import { useCallback } from "react";
 import "./index.css";
 
-export const RunButton = () => {
+type Properties = {
+	code: string;
+};
+
+export const RunButton = ({ code }: Readonly<Properties>) => {
 	const onClick = useCallback(
 		() =>
 			fetch("/api/execute", {
@@ -12,7 +16,7 @@ export const RunButton = () => {
 				},
 				body: JSON.stringify({
 					language: "typescript",
-					code: `console.log("Hello, World!")`,
+					code,
 				}),
 			})
 				.then((response) => response.json())
@@ -22,7 +26,7 @@ export const RunButton = () => {
 						`POST request error when clicking the execute button: ${error}.`,
 					),
 				),
-		[],
+		[code],
 	);
 
 	return (

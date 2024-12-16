@@ -1,11 +1,13 @@
 import { javascript } from "@codemirror/lang-javascript";
 import { php } from "@codemirror/lang-php";
 import CodeMirror from "@uiw/react-codemirror";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import type { Languages } from "src/types/languages";
 
 type Properties = {
+	code: string;
 	lang: Languages;
+	setCode: (code: string) => void;
 };
 
 const chooseExtensions = (lang: Languages) => {
@@ -20,14 +22,15 @@ const chooseExtensions = (lang: Languages) => {
 	}
 };
 
-export const CodeEditor = ({ lang }: Readonly<Properties>) => {
-	const [code, setCode] = useState("console.log('Hello, World!');");
+export const CodeEditor = ({ code, lang, setCode }: Readonly<Properties>) => {
+	const onChange = useCallback(
+		(text: string) => {
+			console.log("Text: ", text);
 
-	const onChange = useCallback((text: string) => {
-		console.log("Text: ", text);
-
-		setCode(text);
-	}, []);
+			setCode(text);
+		},
+		[setCode],
+	);
 
 	const extensions = chooseExtensions(lang);
 

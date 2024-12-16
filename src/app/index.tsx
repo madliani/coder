@@ -10,14 +10,15 @@ import "./index.css";
 const App = () => {
 	const defaultLang: Languages = "TypeScript";
 	const [lang, setLang] = useState<Languages>(defaultLang);
+	const [code, setCode] = useState("console.log('Hello, World!');");
 
 	server();
 
 	return (
 		<FluentProvider theme={teamsLightTheme}>
 			<LanguageSelector defaultLang={defaultLang} setLang={setLang} />
-			<CodeEditor lang={lang} />
-			<RunButton />
+			<CodeEditor code={code} lang={lang} setCode={setCode} />
+			<RunButton code={code} />
 		</FluentProvider>
 	);
 };
