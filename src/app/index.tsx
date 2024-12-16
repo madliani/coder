@@ -1,12 +1,9 @@
-import {
-	Button,
-	FluentProvider,
-	teamsLightTheme,
-} from "@fluentui/react-components";
+import { FluentProvider, teamsLightTheme } from "@fluentui/react-components";
 import { useState } from "react";
 import type { AvailableLanguages } from "src/types/languages";
 import { CodeEditor } from "../components/CodeEditor";
 import { LanguageSelector } from "../components/LanguageSelector";
+import { RunButton } from "../components/RunButton";
 import "./index.css";
 
 const App = () => {
@@ -17,9 +14,7 @@ const App = () => {
 		<FluentProvider theme={teamsLightTheme}>
 			<LanguageSelector defaultLang={defaultLang} setLang={setLang} />
 			<CodeEditor lang={lang} />
-			<Button appearance="primary" className="app__run-button">
-				I am a button.
-			</Button>
+			<RunButton />
 		</FluentProvider>
 	);
 };
