@@ -2,13 +2,13 @@ import { javascript } from "@codemirror/lang-javascript";
 import { php } from "@codemirror/lang-php";
 import CodeMirror from "@uiw/react-codemirror";
 import { useCallback, useState } from "react";
-import type { AvailableLanguages } from "src/types/languages";
+import type { Languages } from "src/types/languages";
 
 type Properties = {
-	lang: AvailableLanguages;
+	lang: Languages;
 };
 
-const chooseExtensions = (lang: AvailableLanguages) => {
+const chooseExtensions = (lang: Languages) => {
 	switch (lang) {
 		case "TypeScript": {
 			return [javascript({ jsx: false, typescript: true })];

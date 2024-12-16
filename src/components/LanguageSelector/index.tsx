@@ -1,9 +1,9 @@
 import { Select, type SelectProps, useId } from "@fluentui/react-components";
-import type { AvailableLanguages } from "src/types/languages";
+import type { Languages } from "src/types/languages";
 
 type Properties = {
-	defaultLang: AvailableLanguages;
-	setLang: (lang: AvailableLanguages) => void;
+	defaultLang: Languages;
+	setLang: (lang: Languages) => void;
 };
 
 export const LanguageSelector = ({
