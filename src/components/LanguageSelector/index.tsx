@@ -1,13 +1,23 @@
 import { Select, type SelectProps, useId } from "@fluentui/react-components";
-import { useState } from "react";
+import type { AvailableLanguages } from "src/types/languages";
 
-export const LanguageSelector = () => {
-	const defaultLanguage = "TypeScript";
+type Properties = {
+	defaultLang: AvailableLanguages;
+	setLang: (lang: AvailableLanguages) => void;
+};
+
+export const LanguageSelector = ({
+	defaultLang,
+	setLang,
+}: Readonly<Properties>) => {
 	const selectId = useId();
-	const [language, setLanguage] = useState(defaultLanguage);
 
 	const onChange: SelectProps["onChange"] = (_, data) => {
-		setLanguage(data.value);
+		if (data.value === "TypeScript" || data.value === "PHP") {
+			setLang(data.value);
+		} else {
+			console.error("The language is not in the list of languages.");
+		}
 	};
 
 	return (
@@ -16,8 +26,7 @@ export const LanguageSelector = () => {
 			<Select
 				id={selectId}
 				onChange={onChange}
-				value={language}
-				defaultValue={defaultLanguage}
+				defaultValue={defaultLang}
 				size="medium"
 			>
 				<option>TypeScript</option>
