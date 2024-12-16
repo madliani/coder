@@ -19,7 +19,7 @@ const App = () => {
 		<FluentProvider theme={teamsLightTheme}>
 			<LanguageSelector defaultLang={defaultLang} setLang={setLang} />
 			<CodeEditor code={code} lang={lang} setCode={setCode} />
-			<RunButton code={code} />
+			<RunButton code={code} lang={lang} />
 		</FluentProvider>
 	);
 };
