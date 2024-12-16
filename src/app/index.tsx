@@ -9,7 +9,7 @@ import "./index.css";
 
 const App = () => {
 	const defaultLang: Languages = "TypeScript";
-	const defaultCode = "console.log('Hello, World!');";
+	const defaultCode = `console.log("Hello, World!");`;
 	const [lang, setLang] = useState<Languages>(defaultLang);
 	const [code, setCode] = useState(defaultCode);
 
