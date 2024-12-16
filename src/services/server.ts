@@ -10,11 +10,13 @@ export const server = () => {
 				const status = Math.random() * 10 > 5 ? "success" : "fail";
 
 				if (typeof fromClient !== "object") {
-					console.error("The client request body is not object.");
+					console.error("The body of a client request is not an object.");
 
 					const code = 500;
 					const headers = {};
-					const data = { errors: ["The request body is not object."] };
+					const data = {
+						errors: ["The body of the request is not an object."],
+					};
 
 					return new Response(code, headers, data);
 				}
