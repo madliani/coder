@@ -1,11 +1,10 @@
 import { Card, Text } from "@fluentui/react-components";
 import { List, ListItem } from "@fluentui/react-list-preview";
-import type { Difficulty } from "src/types/difficulty";
 
 type Properties = {
 	num: number;
 	title: string;
-	difficulty: Difficulty;
+	difficulty: string;
 	description: string;
 	examples: string[];
 	constraints: string[];
