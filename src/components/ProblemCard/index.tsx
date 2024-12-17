@@ -1,16 +1,12 @@
 import { Card, Text } from "@fluentui/react-components";
 import { List, ListItem } from "@fluentui/react-list-preview";
+import type { Problem } from "src/types/problem";
 
 type Properties = {
-	num: number;
-	title: string;
-	difficulty: string;
-	description: string;
-	examples: string[];
-	constraints: string[];
-	fun_sign: string;
-	notes: string[];
-};
+	orientation: "vertical" | "horizontal";
+	size: "small" | "medium" | "large";
+	appearance: "filled" | "filled-alternative" | "outline" | "subtle";
+} & Problem;
 
 export const ProblemCard = ({
 	num,
