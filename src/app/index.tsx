@@ -14,6 +14,7 @@ import "./index.css";
 const App = () => {
 	const defaultLang: Languages = "typescript";
 	const [lang, setLang] = useState<Languages>(defaultLang);
+	const [prevLang, setPrevLang] = useState<Languages>(defaultLang);
 
 	const defaultCode = problems[0].fun_sign[defaultLang];
 	const [code, setCode] = useState(defaultCode);
@@ -30,8 +31,10 @@ const App = () => {
 				defaultCode={defaultCode}
 				code={code}
 				lang={lang}
+				prevLang={prevLang}
 				fun_sign={problems[0].fun_sign}
 				setCode={setCode}
+				setPrevLang={setPrevLang}
 			/>
 			{result && (result.output || result.error) && (
 				<ResultMessage

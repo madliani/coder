@@ -9,8 +9,10 @@ type Properties = {
 	defaultCode: string;
 	code: string;
 	lang: Languages;
+	prevLang: Languages;
 	fun_sign: ProblemFunctionSign;
 	setCode: (code: string) => void;
+	setPrevLang: (lang: Languages) => void;
 };
 
 const chooseExtensions = (lang: Languages) => {
@@ -29,11 +31,11 @@ export const CodeEditor = ({
 	defaultCode,
 	code,
 	lang,
+	prevLang,
 	fun_sign,
 	setCode,
+	setPrevLang,
 }: Readonly<Properties>) => {
-	const extensions = chooseExtensions(lang);
-
 	const onChange = useCallback(
 		(text: string) => {
 			console.log("Text: ", text);
@@ -44,16 +46,19 @@ export const CodeEditor = ({
 	);
 
 	useEffect(() => {
-		if (code === defaultCode) {
+		if (code === defaultCode || (code === "" && lang !== prevLang)) {
 			setCode(fun_sign[lang]);
+			setPrevLang(lang);
+
+			return;
 		}
-	});
+	}, [code, lang, prevLang, defaultCode, fun_sign, setCode, setPrevLang]);
 
 	return (
 		<CodeMirror
 			value={code}
 			height="200px"
-			extensions={extensions}
+			extensions={chooseExtensions(lang)}
 			onChange={onChange}
 		/>
 	);
