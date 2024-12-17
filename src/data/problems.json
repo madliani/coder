@@ -13,7 +13,7 @@
 		],
 		"fun_sign": {
 			"typescript": "function longest_substr(str: string): string {}",
-			"php": "function longest_substr(string $str): string {}"
+			"php": "<?php\nfunction longest_substr(string $str): string {}"
 		},
 		"notes": [
 			"You may assume that the input string is non-empty.",
