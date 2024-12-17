@@ -1,4 +1,5 @@
 import {
+	Link,
 	MessageBar,
 	MessageBarBody,
 	MessageBarTitle,
@@ -9,12 +10,14 @@ type Properties = {
 	intent: "info" | "warning" | "error" | "success";
 	title: string;
 	children: ReactNode;
+	onClose?: () => void;
 };
 
 export const AlertMessage = ({
 	intent,
 	title,
 	children,
+	onClose,
 }: Readonly<Properties>) => {
 	return (
 		<MessageBar intent={intent}>
@@ -22,6 +25,7 @@ export const AlertMessage = ({
 				<MessageBarTitle>{title}:</MessageBarTitle>
 				{children}
 			</MessageBarBody>
+			{onClose && <Link onClick={onClose}>Close</Link>}
 		</MessageBar>
 	);
 };
