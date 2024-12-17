@@ -22,6 +22,9 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 	const [code, setCode] = useState<string | null>(defaultCode);
 
 	const [result, setResult] = useState<Result | null>(null);
+	const [isClosed, setIsClosed] = useState(false);
+
+	const closeAlertMessage = () => setIsClosed(true);
 
 	return (
 		<FluentLayout>
@@ -36,10 +39,11 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 				setCode={setCode}
 				setPrevLang={setPrevLang}
 			/>
-			{result && (result.output || result.error) && (
+			{result && (result.output || result.error) && !isClosed && (
 				<AlertMessage
 					intent={result.status}
 					title={result.status.toUpperCase()}
+					onClose={closeAlertMessage}
 				>
 					{result.output || result.error}
 				</AlertMessage>
