@@ -1,49 +1,40 @@
-import { FluentProvider, teamsLightTheme } from "@fluentui/react-components";
-import { useState } from "react";
-import { CodeEditor } from "../components/CodeEditor";
-import { LanguageSelector } from "../components/LanguageSelector";
-import { ProblemCard } from "../components/ProblemCard";
-import { ResultMessage } from "../components/ResultMessage";
-import { RunButton } from "../components/RunButton";
-import problems from "../data/problems.json";
+import { Spinner } from "@fluentui/react-components";
+import { useEffect, useState } from "react";
+import { FluentLayout } from "../layout/FluentLayout";
+import { ErrorPage } from "../pages/ErrorPage";
+import HomePage from "../pages/HomePage";
 import { server } from "../services/server";
-import type { Languages } from "../types/languages";
-import type { Result } from "../types/result";
+import type { Problem } from "../types/problem";
 import "./index.css";
 
 const App = () => {
-	const defaultLang: Languages = "typescript";
-	const [lang, setLang] = useState<Languages>(defaultLang);
-	const [prevLang, setPrevLang] = useState<Languages>(defaultLang);
-
-	const defaultCode = problems[0].fun_sign[defaultLang];
-	const [code, setCode] = useState(defaultCode);
-
-	const [result, setResult] = useState<Result | null>(null);
+	const [problems, setProblems] = useState<Problem[] | null>(null);
 
 	server();
 
+	useEffect(() => {
+		fetch("/api/problems", {
+			method: "GET",
+		})
+			.then((response) => response.json())
+			.then((problems) => setProblems(problems))
+			.catch((error) =>
+				console.error(`The error when loading problems: ${error}`),
+			);
+	}, []);
+
+	if (problems && problems.length === 0) {
+		return (
+			<FluentLayout>
+				<ErrorPage msg="Problems don't exist." />
+			</FluentLayout>
+		);
+	}
+
 	return (
-		<FluentProvider theme={teamsLightTheme}>
-			<ProblemCard lang={lang} {...problems[0]} />
-			<LanguageSelector defaultLang={defaultLang} setLang={setLang} />
-			<CodeEditor
-				defaultCode={defaultCode}
-				code={code}
-				lang={lang}
-				prevLang={prevLang}
-				fun_sign={problems[0].fun_sign}
-				setCode={setCode}
-				setPrevLang={setPrevLang}
-			/>
-			{result && (result.output || result.error) && (
-				<ResultMessage
-					intent={result.status}
-					msg={result.output || result.error}
-				/>
-			)}
-			<RunButton code={code} lang={lang} setResult={setResult} />
-		</FluentProvider>
+		<FluentLayout>
+			{problems ? <HomePage problems={problems} /> : <Spinner />}
+		</FluentLayout>
 	);
 };
 

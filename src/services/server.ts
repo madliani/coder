@@ -1,9 +1,15 @@
 import { Response, createServer } from "miragejs";
 
+import problems from "../data/problems.json";
+
 export const server = () => {
 	createServer({
 		routes() {
 			this.namespace = "api";
+
+			this.get("/problems", () => {
+				return problems;
+			});
 
 			this.post("/execute", (_, req) => {
 				const fromClient = JSON.parse(req.requestBody);
