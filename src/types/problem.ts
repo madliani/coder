@@ -7,7 +7,7 @@ export type Problem = {
 	num: number;
 	title: string;
 	difficulty: string;
-	description: string;
+	desc: string;
 	examples: string[];
 	constraints: string[];
 	fun_sign: ProblemFunctionSign;

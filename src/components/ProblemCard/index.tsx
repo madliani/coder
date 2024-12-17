@@ -18,7 +18,7 @@ export const ProblemCard = ({
 	num,
 	title,
 	difficulty,
-	description,
+	desc,
 	examples,
 	constraints,
 	fun_sign,
@@ -32,7 +32,7 @@ export const ProblemCard = ({
 			<Text weight="bold">
 				Difficulty: {<Text weight="regular">{difficulty}</Text>}
 			</Text>
-			<Text>{description}</Text>
+			<Text>{desc}</Text>
 			<Text weight="bold">Examples:</Text>
 			<List>
 				{examples.map((example, idx) => (
