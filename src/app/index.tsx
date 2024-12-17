@@ -1,8 +1,7 @@
-import { Spinner } from "@fluentui/react-components";
 import { useEffect, useState } from "react";
-import { FluentLayout } from "../layout/FluentLayout";
 import { ErrorPage } from "../pages/ErrorPage";
 import HomePage from "../pages/HomePage";
+import { WaitingPage } from "../pages/WaitingPage";
 import { server } from "../services/server";
 import type { Problem } from "../types/problem";
 import "./index.css";
@@ -26,26 +25,14 @@ const App = () => {
 	}, []);
 
 	if (!problems && problemLoading) {
-		return (
-			<FluentLayout>
-				<Spinner size="large" />
-			</FluentLayout>
-		);
+		return <WaitingPage />;
 	}
 
 	if (problems && !problemLoading && problems.length === 0) {
-		return (
-			<FluentLayout>
-				<ErrorPage msg="Problems don't exist." />
-			</FluentLayout>
-		);
+		return <ErrorPage msg="Problems don't exist." />;
 	}
 
-	return (
-		<FluentLayout>
-			<HomePage problems={problems} />
-		</FluentLayout>
-	);
+	return <HomePage problems={problems} />;
 };
 
 export default App;

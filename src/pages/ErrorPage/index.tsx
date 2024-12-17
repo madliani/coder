@@ -1,4 +1,5 @@
 import { AlertMessage } from "../../components/ResultMessage";
+import { FluentLayout } from "../../layout/FluentLayout";
 
 type Properties = {
 	msg: string;
@@ -6,8 +7,10 @@ type Properties = {
 
 export const ErrorPage = ({ msg }: Readonly<Properties>) => {
 	return (
-		<AlertMessage intent="error" title="404:">
-			{msg}
-		</AlertMessage>
+		<FluentLayout>
+			<AlertMessage intent="error" title="404:">
+				{msg}
+			</AlertMessage>
+		</FluentLayout>
 	);
 };

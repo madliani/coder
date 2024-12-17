@@ -5,6 +5,7 @@ import { LanguageSelector } from "../../components/LanguageSelector";
 import { ProblemCard } from "../../components/ProblemCard";
 import { AlertMessage } from "../../components/ResultMessage";
 import { RunButton } from "../../components/RunButton";
+import { FluentLayout } from "../../layout/FluentLayout";
 import type { Languages } from "../../types/languages";
 import type { Result } from "../../types/result";
 
@@ -23,7 +24,7 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 	const [result, setResult] = useState<Result | null>(null);
 
 	return (
-		<>
+		<FluentLayout>
 			<ProblemCard lang={lang} {...problems[0]} />
 			<LanguageSelector defaultLang={defaultLang} setLang={setLang} />
 			<CodeEditor
@@ -44,7 +45,7 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 				</AlertMessage>
 			)}
 			<RunButton code={code} lang={lang} setResult={setResult} />
-		</>
+		</FluentLayout>
 	);
 };
 
