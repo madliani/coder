@@ -28,6 +28,13 @@
 
 import { createRoot } from "react-dom/client";
 import App from "./app";
+import { server } from "./services/server";
+
+try {
+	server();
+} catch (error: unknown) {
+	console.error(`Server error: ${error}`);
+}
 
 const root = document.getElementById("root");
 

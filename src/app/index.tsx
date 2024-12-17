@@ -2,15 +2,12 @@ import { useEffect, useState } from "react";
 import { ErrorPage } from "../pages/ErrorPage";
 import HomePage from "../pages/HomePage";
 import { WaitingPage } from "../pages/WaitingPage";
-import { server } from "../services/server";
 import type { Problem } from "../types/problem";
 import "./index.css";
 
 const App = () => {
 	const [problems, setProblems] = useState<Problem[] | null>(null);
 	const [problemLoading, setProblemLoading] = useState(true);
-
-	server();
 
 	useEffect(() => {
 		fetch("/api/problems", {
