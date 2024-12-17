@@ -47,6 +47,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@fluentui/react-components": "^9.56.5",
+		"@fluentui/react-list-preview": "^0.4.4",
 		"@uiw/codemirror-extensions-langs": "^4.23.6",
 		"@uiw/react-codemirror": "^4.23.6",
 		"electron-squirrel-startup": "^1.0.1",
