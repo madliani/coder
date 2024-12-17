@@ -27,7 +27,9 @@ export const LanguageSelector = ({
 
 	return (
 		<>
-			<Label htmlFor={selectId}>Language:</Label>
+			<Label htmlFor={selectId} weight="semibold">
+				Language:
+			</Label>
 			<Select
 				id={selectId}
 				onChange={onChange}
