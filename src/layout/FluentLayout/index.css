@@ -1,0 +1,7 @@
+.fluent-layout__fluent-provider {
+    @apply flex !important;
+    @apply flex-col !important;
+    @apply flex-wrap !important;
+    @apply items-center !important;
+    @apply justify-center !important;
+}
