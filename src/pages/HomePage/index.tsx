@@ -1,5 +1,4 @@
 import { useState } from "react";
-import type { Problem } from "src/types/problem";
 import { AlertMessage } from "../../components/AlertMessage";
 import { CodeEditor } from "../../components/CodeEditor";
 import { LanguageSelector } from "../../components/LanguageSelector";
@@ -7,6 +6,7 @@ import { ProblemCard } from "../../components/ProblemCard";
 import { RunButton } from "../../components/RunButton";
 import { FluentLayout } from "../../layout/FluentLayout";
 import type { Languages } from "../../types/languages";
+import type { Problem } from "../../types/problem";
 import type { Result } from "../../types/result";
 
 type Properties = {
