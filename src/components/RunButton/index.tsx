@@ -1,6 +1,6 @@
 import { Button } from "@fluentui/react-components";
 import { useCallback, useState } from "react";
-import type { Languages } from "src/types/languages";
+import type { Languages } from "../../types/languages";
 import type { Result } from "../../types/result";
 import "./index.css";
 
