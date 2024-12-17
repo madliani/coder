@@ -25,8 +25,8 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 
 	return (
 		<FluentLayout>
-			<ProblemCard lang={lang} {...problems[0]} />
 			<LanguageSelector defaultLang={defaultLang} setLang={setLang} />
+			<ProblemCard lang={lang} {...problems[0]} />
 			<CodeEditor
 				defaultCode={defaultCode}
 				code={code}
