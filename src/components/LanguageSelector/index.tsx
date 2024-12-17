@@ -1,4 +1,9 @@
-import { Select, type SelectProps, useId } from "@fluentui/react-components";
+import {
+	Label,
+	Select,
+	type SelectProps,
+	useId,
+} from "@fluentui/react-components";
 import type { Languages } from "src/types/languages";
 
 type Properties = {
@@ -22,7 +27,7 @@ export const LanguageSelector = ({
 
 	return (
 		<>
-			<label htmlFor={selectId}>Language</label>
+			<Label htmlFor={selectId}>Language:</Label>
 			<Select
 				id={selectId}
 				onChange={onChange}
