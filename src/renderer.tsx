@@ -31,4 +31,8 @@ import App from "./app";
 
 const root = document.getElementById("root");
 
-createRoot(root).render(<App />);
+try {
+	createRoot(root).render(<App />);
+} catch (error: unknown) {
+	console.log("The root element of the page wasn't found.");
+}
