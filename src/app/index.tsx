@@ -22,12 +22,7 @@ const App = () => {
 
 	return (
 		<FluentProvider theme={teamsLightTheme}>
-			<ProblemCard
-				orientation="vertical"
-				size="large"
-				appearance="filled"
-				{...problems[0]}
-			/>
+			<ProblemCard {...problems[0]} />
 			<LanguageSelector defaultLang={defaultLang} setLang={setLang} />
 			<CodeEditor code={code} lang={lang} setCode={setCode} />
 			{result && (result.output || result.error) && (

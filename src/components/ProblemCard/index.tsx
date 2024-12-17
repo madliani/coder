@@ -3,12 +3,15 @@ import { List, ListItem } from "@fluentui/react-list-preview";
 import type { Problem } from "src/types/problem";
 
 type Properties = {
-	orientation: "vertical" | "horizontal";
-	size: "small" | "medium" | "large";
-	appearance: "filled" | "filled-alternative" | "outline" | "subtle";
+	orientation?: "vertical" | "horizontal";
+	size?: "small" | "medium" | "large";
+	appearance?: "filled" | "filled-alternative" | "outline" | "subtle";
 } & Problem;
 
 export const ProblemCard = ({
+	orientation,
+	size,
+	appearance,
 	num,
 	title,
 	difficulty,
@@ -19,7 +22,7 @@ export const ProblemCard = ({
 	notes,
 }: Readonly<Properties>) => {
 	return (
-		<Card>
+		<Card orientation={orientation} size={size} appearance={appearance}>
 			<Text weight="bold">
 				{num}. {title}
 			</Text>
