@@ -4,7 +4,7 @@ import {
 	type SelectProps,
 	useId,
 } from "@fluentui/react-components";
-import type { Languages } from "src/types/languages";
+import type { Languages } from "../../types/languages";
 
 type Properties = {
 	defaultLang: Languages;
