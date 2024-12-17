@@ -9,6 +9,7 @@ import "./index.css";
 
 const App = () => {
 	const [problems, setProblems] = useState<Problem[] | null>(null);
+	const [problemLoading, setProblemLoading] = useState(true);
 
 	server();
 
@@ -20,10 +21,19 @@ const App = () => {
 			.then((problems) => setProblems(problems))
 			.catch((error) =>
 				console.error(`The error when loading problems: ${error}`),
-			);
+			)
+			.finally(() => setProblemLoading(false));
 	}, []);
 
-	if (problems && problems.length === 0) {
+	if (!problems && problemLoading) {
+		return (
+			<FluentLayout>
+				<Spinner size="large" />
+			</FluentLayout>
+		);
+	}
+
+	if (problems && !problemLoading && problems.length === 0) {
 		return (
 			<FluentLayout>
 				<ErrorPage msg="Problems don't exist." />
@@ -33,7 +43,7 @@ const App = () => {
 
 	return (
 		<FluentLayout>
-			{problems ? <HomePage problems={problems} /> : <Spinner />}
+			<HomePage problems={problems} />
 		</FluentLayout>
 	);
 };
