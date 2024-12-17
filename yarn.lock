@@ -3039,13 +3039,6 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.3.0.tgz#f6e14a97858d327252200242d4ccfe522c445522"
   integrity sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==
 
-biwascheme@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/biwascheme/-/biwascheme-0.8.0.tgz#f0a8ab7ac9e7995c90d5687559298a6782dad0e3"
-  integrity sha512-zuoqaX8zPsXJDHZZC4cSYbP3mAvuVKrIUCR1pChjfi/9Zp5WTYhO3qjv4zOazu5Zfdd/pEN4GcSMCM6rYXHHiw==
-  dependencies:
-    optparse "1.0.5"
-
 bl@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/bl/-/bl-4.1.0.tgz#451535264182bec2fbbc83a62ab98cf11d9f7b3a"
@@ -5662,11 +5655,6 @@ optionator@^0.9.3:
     prelude-ls "^1.2.1"
     type-check "^0.4.0"
     word-wrap "^1.2.5"
-
-optparse@1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/optparse/-/optparse-1.0.5.tgz#75e75a96506611eb1c65ba89018ff08a981e2c16"
-  integrity sha512-WfnNWLS3vr8omCm8nKYKaRbapuy6pEbx1O0B+eP5sUf/a++sT9/h8PflqBoHsY9N+YdzUT12T8snXigq13QpJg==
 
 ora@^5.1.0:
   version "5.4.1"

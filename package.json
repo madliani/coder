@@ -49,7 +49,6 @@
 		"@fluentui/react-components": "^9.56.5",
 		"@uiw/codemirror-extensions-langs": "^4.23.6",
 		"@uiw/react-codemirror": "^4.23.6",
-		"biwascheme": "^0.8.0",
 		"electron-squirrel-startup": "^1.0.1",
 		"miragejs": "^0.1.48",
 		"react": "^19.0.0",
