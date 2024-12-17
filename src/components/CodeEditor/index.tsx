@@ -2,8 +2,8 @@ import { javascript } from "@codemirror/lang-javascript";
 import { php } from "@codemirror/lang-php";
 import CodeMirror from "@uiw/react-codemirror";
 import { useCallback, useEffect } from "react";
-import type { Languages } from "src/types/languages";
-import type { ProblemFunctionSign } from "src/types/problem";
+import type { Languages } from "../../types/languages";
+import type { ProblemFunctionSign } from "../../types/problem";
 
 type Properties = {
 	defaultCode: string;
