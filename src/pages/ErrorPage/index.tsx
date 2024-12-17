@@ -1,4 +1,4 @@
-import { AlertMessage } from "../../components/ResultMessage";
+import { AlertMessage } from "../../components/AlertMessage";
 import { FluentLayout } from "../../layout/FluentLayout";
 
 type Properties = {

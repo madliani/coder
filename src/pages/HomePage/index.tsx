@@ -1,9 +1,9 @@
 import { useState } from "react";
 import type { Problem } from "src/types/problem";
+import { AlertMessage } from "../../components/AlertMessage";
 import { CodeEditor } from "../../components/CodeEditor";
 import { LanguageSelector } from "../../components/LanguageSelector";
 import { ProblemCard } from "../../components/ProblemCard";
-import { AlertMessage } from "../../components/ResultMessage";
 import { RunButton } from "../../components/RunButton";
 import { FluentLayout } from "../../layout/FluentLayout";
 import type { Languages } from "../../types/languages";
