@@ -11,7 +11,10 @@
 			"0 <= s.length <= 5 * 10^4",
 			"'s' consists of English letters, digits, symbols, and spaces."
 		],
-		"fun_sign": "function longest_substr(str: string): string {}",
+		"fun_sign": {
+			"typescript": "function longest_substr(str: string): string {}",
+			"php": "function longest_substr(string $str): string {}"
+		},
 		"notes": [
 			"You may assume that the input string is non-empty.",
 			"The solution should have a time complexity of O(n), where n is the length of the string."

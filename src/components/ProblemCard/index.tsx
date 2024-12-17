@@ -1,14 +1,17 @@
 import { Card, Text } from "@fluentui/react-components";
 import { List, ListItem } from "@fluentui/react-list-preview";
-import type { Problem } from "src/types/problem";
+import type { Languages } from "../../types/languages";
+import type { Problem } from "../../types/problem";
 
 type Properties = {
+	lang: Languages;
 	orientation?: "vertical" | "horizontal";
 	size?: "small" | "medium" | "large";
 	appearance?: "filled" | "filled-alternative" | "outline" | "subtle";
 } & Problem;
 
 export const ProblemCard = ({
+	lang,
 	orientation,
 	size,
 	appearance,
@@ -47,7 +50,7 @@ export const ProblemCard = ({
 				))}
 			</List>
 			<Text weight="bold">Function Signature:</Text>
-			<code>{fun_sign}</code>
+			<code>{fun_sign[lang]}</code>
 			<Text weight="bold">Notes:</Text>
 			<List>
 				{notes.map((note, idx) => (

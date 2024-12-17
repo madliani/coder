@@ -18,7 +18,7 @@ export const LanguageSelector = ({
 	const selectId = useId();
 
 	const onChange: SelectProps["onChange"] = (_, data) => {
-		if (data.value === "TypeScript" || data.value === "PHP") {
+		if (data.value === "typescript" || data.value === "php") {
 			setLang(data.value);
 		} else {
 			console.error("The language is not in the list of languages.");
@@ -36,8 +36,8 @@ export const LanguageSelector = ({
 				defaultValue={defaultLang}
 				size="medium"
 			>
-				<option>TypeScript</option>
-				<option>PHP</option>
+				<option value="typescript">TypeScript</option>
+				<option value="php">PHP</option>
 			</Select>
 		</>
 	);

@@ -1,28 +1,39 @@
 import { javascript } from "@codemirror/lang-javascript";
 import { php } from "@codemirror/lang-php";
 import CodeMirror from "@uiw/react-codemirror";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import type { Languages } from "src/types/languages";
+import type { ProblemFunctionSign } from "src/types/problem";
 
 type Properties = {
+	defaultCode: string;
 	code: string;
 	lang: Languages;
+	fun_sign: ProblemFunctionSign;
 	setCode: (code: string) => void;
 };
 
 const chooseExtensions = (lang: Languages) => {
 	switch (lang) {
-		case "TypeScript": {
+		case "typescript": {
 			return [javascript({ jsx: false, typescript: true })];
 		}
 
-		case "PHP": {
+		case "php": {
 			return [php()];
 		}
 	}
 };
 
-export const CodeEditor = ({ code, lang, setCode }: Readonly<Properties>) => {
+export const CodeEditor = ({
+	defaultCode,
+	code,
+	lang,
+	fun_sign,
+	setCode,
+}: Readonly<Properties>) => {
+	const extensions = chooseExtensions(lang);
+
 	const onChange = useCallback(
 		(text: string) => {
 			console.log("Text: ", text);
@@ -32,7 +43,11 @@ export const CodeEditor = ({ code, lang, setCode }: Readonly<Properties>) => {
 		[setCode],
 	);
 
-	const extensions = chooseExtensions(lang);
+	useEffect(() => {
+		if (code === defaultCode) {
+			setCode(fun_sign[lang]);
+		}
+	});
 
 	return (
 		<CodeMirror

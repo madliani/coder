@@ -1,1 +1,1 @@
-export type Languages = "TypeScript" | "PHP";
+export type Languages = "typescript" | "php";

@@ -12,19 +12,27 @@ import type { Result } from "../types/result";
 import "./index.css";
 
 const App = () => {
-	const defaultLang: Languages = "TypeScript";
-	const defaultCode = problems[0].fun_sign;
+	const defaultLang: Languages = "typescript";
 	const [lang, setLang] = useState<Languages>(defaultLang);
+
+	const defaultCode = problems[0].fun_sign[defaultLang];
 	const [code, setCode] = useState(defaultCode);
+
 	const [result, setResult] = useState<Result | null>(null);
 
 	server();
 
 	return (
 		<FluentProvider theme={teamsLightTheme}>
-			<ProblemCard {...problems[0]} />
+			<ProblemCard lang={lang} {...problems[0]} />
 			<LanguageSelector defaultLang={defaultLang} setLang={setLang} />
-			<CodeEditor code={code} lang={lang} setCode={setCode} />
+			<CodeEditor
+				defaultCode={defaultCode}
+				code={code}
+				lang={lang}
+				fun_sign={problems[0].fun_sign}
+				setCode={setCode}
+			/>
 			{result && (result.output || result.error) && (
 				<ResultMessage
 					intent={result.status}
