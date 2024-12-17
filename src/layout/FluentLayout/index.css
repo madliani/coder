@@ -1,4 +1,7 @@
 .fluent-layout__fluent-provider {
+    @apply w-full !important;
+    @apply h-full !important;
+
     @apply flex !important;
     @apply flex-col !important;
     @apply flex-wrap !important;
