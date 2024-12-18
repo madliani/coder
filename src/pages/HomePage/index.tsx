@@ -25,7 +25,7 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 	const [result, setResult] = useState<Result | null>(null);
 	const [isClosed, setIsClosed] = useState(false);
 	const isHidden = !(
-		result &&
+		result !== null &&
 		(result.output !== undefined || result.error !== undefined) &&
 		!isClosed
 	);
