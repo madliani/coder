@@ -30,7 +30,7 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 		!isClosed
 	);
 
-	const closeAlertMessage = () => setIsClosed(true);
+	const onClose = () => setIsClosed(true);
 
 	return (
 		<FluentLayout>
@@ -39,7 +39,7 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 					<AlertMessage
 						intent={result.status}
 						title={result.status.toUpperCase()}
-						onClose={closeAlertMessage}
+						onClose={onClose}
 					>
 						{result.output || result.error}
 					</AlertMessage>
