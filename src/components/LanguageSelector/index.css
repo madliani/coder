@@ -1,6 +1,6 @@
 .language-selector__container {
     @apply flex !important;
-    @apply flex-col !important;
+    @apply flex-row !important;
     @apply flex-nowrap !important;
     @apply items-center !important;
     @apply justify-center !important;
