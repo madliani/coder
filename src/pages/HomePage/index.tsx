@@ -35,8 +35,16 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 	return (
 		<FluentLayout>
 			<header className="homepage__header">
+				{!isHidden && (
+					<AlertMessage
+						intent={result.status}
+						title={result.status.toUpperCase()}
+						onClose={closeAlertMessage}
+					>
+						{result.output || result.error}
+					</AlertMessage>
+				)}
 				<LanguageSelector defaultLang={defaultLang} setLang={setLang} />
-				<RunButton code={code} lang={lang} setResult={setResult} />
 			</header>
 			<main className="homepage__main">
 				<ProblemCard lang={lang} {...problems[0]} />
@@ -51,15 +59,7 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 				/>
 			</main>
 			<footer className="homepage__footer">
-				{!isHidden && (
-					<AlertMessage
-						intent={result.status}
-						title={result.status.toUpperCase()}
-						onClose={closeAlertMessage}
-					>
-						{result.output || result.error}
-					</AlertMessage>
-				)}
+				<RunButton code={code} lang={lang} setResult={setResult} />
 			</footer>
 		</FluentLayout>
 	);
