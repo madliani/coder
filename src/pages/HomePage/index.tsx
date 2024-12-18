@@ -45,10 +45,10 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 					setPrevLang={setPrevLang}
 				/>
 			</main>
-			{result &&
-				(result.output !== undefined || result.error !== undefined) &&
-				!isClosed && (
-					<footer className="homepage__footer">
+			<footer className="homepage__footer">
+				{result &&
+					(result.output !== undefined || result.error !== undefined) &&
+					!isClosed && (
 						<AlertMessage
 							intent={result.status}
 							title={result.status.toUpperCase()}
@@ -56,8 +56,8 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 						>
 							{result.output || result.error}
 						</AlertMessage>
-					</footer>
-				)}
+					)}
+			</footer>
 		</FluentLayout>
 	);
 };
