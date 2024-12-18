@@ -24,6 +24,11 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 
 	const [result, setResult] = useState<Result | null>(null);
 	const [isClosed, setIsClosed] = useState(false);
+	const isHidden = !(
+		result &&
+		(result.output !== undefined || result.error !== undefined) &&
+		!isClosed
+	);
 
 	const closeAlertMessage = () => setIsClosed(true);
 
@@ -46,17 +51,15 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 				/>
 			</main>
 			<footer className="homepage__footer">
-				{result &&
-					(result.output !== undefined || result.error !== undefined) &&
-					!isClosed && (
-						<AlertMessage
-							intent={result.status}
-							title={result.status.toUpperCase()}
-							onClose={closeAlertMessage}
-						>
-							{result.output || result.error}
-						</AlertMessage>
-					)}
+				{!isHidden && (
+					<AlertMessage
+						intent={result.status}
+						title={result.status.toUpperCase()}
+						onClose={closeAlertMessage}
+					>
+						{result.output || result.error}
+					</AlertMessage>
+				)}
 			</footer>
 		</FluentLayout>
 	);
