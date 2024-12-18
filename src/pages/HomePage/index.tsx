@@ -45,17 +45,19 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 					setPrevLang={setPrevLang}
 				/>
 			</main>
-			{result && (result.output || result.error) && !isClosed && (
-				<footer className="homepage__footer">
-					<AlertMessage
-						intent={result.status}
-						title={result.status.toUpperCase()}
-						onClose={closeAlertMessage}
-					>
-						{result.output || result.error}
-					</AlertMessage>
-				</footer>
-			)}
+			{result &&
+				(result.output !== undefined || result.error !== undefined) &&
+				!isClosed && (
+					<footer className="homepage__footer">
+						<AlertMessage
+							intent={result.status}
+							title={result.status.toUpperCase()}
+							onClose={closeAlertMessage}
+						>
+							{result.output || result.error}
+						</AlertMessage>
+					</footer>
+				)}
 		</FluentLayout>
 	);
 };
