@@ -39,8 +39,6 @@ export const CodeEditor = ({
 }: Readonly<Properties>) => {
 	const onChange = useCallback(
 		(text: string) => {
-			console.log("Text: ", text);
-
 			setCode(text);
 		},
 		[setCode],
@@ -58,7 +56,7 @@ export const CodeEditor = ({
 	return (
 		<CodeMirror
 			value={code}
-			height="200px"
+			height="300px"
 			extensions={chooseExtensions(lang)}
 			onChange={onChange}
 			className="code-editor__code-mirror"
