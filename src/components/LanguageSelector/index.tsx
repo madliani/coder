@@ -5,6 +5,7 @@ import {
 	useId,
 } from "@fluentui/react-components";
 import type { Languages } from "../../types/languages";
+import "./index.css";
 
 type Properties = {
 	defaultLang: Languages;
@@ -26,7 +27,7 @@ export const LanguageSelector = ({
 	};
 
 	return (
-		<>
+		<div className="language-selector__container">
 			<Label htmlFor={selectId} weight="semibold">
 				Language:
 			</Label>
@@ -39,6 +40,6 @@ export const LanguageSelector = ({
 				<option value="typescript">TypeScript</option>
 				<option value="php">PHP</option>
 			</Select>
-		</>
+		</div>
 	);
 };
