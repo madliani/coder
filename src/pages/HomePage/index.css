@@ -1,7 +1,7 @@
 .homepage__header {
     @apply flex !important;
     @apply flex-col !important;
-    @apply flex-wrap !important;
+    @apply flex-nowrap !important;
     @apply items-center !important;
     @apply justify-center !important;
 }
@@ -9,7 +9,7 @@
 .homepage__main {
     @apply flex !important;
     @apply flex-col !important;
-    @apply flex-wrap !important;
+    @apply flex-nowrap !important;
     @apply items-center !important;
     @apply justify-center !important;
 
@@ -19,7 +19,7 @@
 .homepage__footer {
     @apply flex !important;
     @apply flex-col !important;
-    @apply flex-wrap !important;
+    @apply flex-nowrap !important;
     @apply items-center !important;
     @apply justify-center !important;
 
