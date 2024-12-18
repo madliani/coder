@@ -4,7 +4,7 @@
 
     @apply flex !important;
     @apply flex-col !important;
-    @apply flex-wrap !important;
+    @apply flex-nowrap !important;
     @apply items-center !important;
     @apply justify-center !important;
 }
