@@ -31,6 +31,10 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 	);
 
 	const onClose = () => setIsClosed(true);
+	const onRun = (result: Result) => {
+		setResult(result);
+		setIsClosed(false);
+	};
 
 	return (
 		<FluentLayout>
@@ -59,7 +63,7 @@ const HomePage = ({ problems }: Readonly<Properties>) => {
 				/>
 			</main>
 			<footer className="homepage__footer">
-				<RunButton code={code} lang={lang} setResult={setResult} />
+				<RunButton code={code} lang={lang} onRun={onRun} />
 			</footer>
 		</FluentLayout>
 	);

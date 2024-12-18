@@ -7,10 +7,10 @@ import "./index.css";
 type Properties = {
 	code: string;
 	lang: Languages;
-	setResult: (result: Result) => void;
+	onRun: (result: Result) => void;
 };
 
-export const RunButton = ({ code, lang, setResult }: Readonly<Properties>) => {
+export const RunButton = ({ code, lang, onRun }: Readonly<Properties>) => {
 	const [reqLoading, setReqLoading] = useState(false);
 
 	const onClick = useCallback(() => {
@@ -27,14 +27,14 @@ export const RunButton = ({ code, lang, setResult }: Readonly<Properties>) => {
 			}),
 		})
 			.then((response) => response.json())
-			.then((result) => setResult(result))
+			.then((result) => onRun(result))
 			.catch((error) =>
 				console.error(
 					`POST request error when clicking the execute button: ${error}.`,
 				),
 			)
 			.finally(() => setReqLoading(false));
-	}, [code, lang, setResult]);
+	}, [code, lang, onRun]);
 
 	return (
 		<>
