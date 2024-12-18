@@ -1,0 +1,3 @@
+.code-editor__code-mirror {
+    @apply mt-4 !important;
+}

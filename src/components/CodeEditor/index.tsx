@@ -4,6 +4,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import { useCallback, useEffect } from "react";
 import type { Languages } from "../../types/languages";
 import type { ProblemFunctionSign } from "../../types/problem";
+import "./index.css";
 
 type Properties = {
 	defaultCode: string;
@@ -60,6 +61,7 @@ export const CodeEditor = ({
 			height="200px"
 			extensions={chooseExtensions(lang)}
 			onChange={onChange}
+			className="code-editor__code-mirror"
 		/>
 	);
 };
