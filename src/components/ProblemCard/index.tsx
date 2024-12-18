@@ -2,6 +2,7 @@ import { Card, Text } from "@fluentui/react-components";
 import { List, ListItem } from "@fluentui/react-list-preview";
 import type { Languages } from "../../types/languages";
 import type { Problem } from "../../types/problem";
+import "./index.css";
 
 type Properties = {
 	lang: Languages;
@@ -25,7 +26,12 @@ export const ProblemCard = ({
 	notes,
 }: Readonly<Properties>) => {
 	return (
-		<Card orientation={orientation} size={size} appearance={appearance}>
+		<Card
+			orientation={orientation}
+			size={size}
+			appearance={appearance}
+			className="problem-card__card"
+		>
 			<Text weight="bold">
 				{num}. {title}
 			</Text>

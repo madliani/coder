@@ -1,0 +1,3 @@
+.problem-card__card {
+    @apply mt-4 !important;
+}
