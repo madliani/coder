@@ -1,0 +1,3 @@
+.alert-message__message-bar {
+    @apply w-auto !important;
+}

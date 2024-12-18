@@ -5,6 +5,7 @@ import {
 	MessageBarTitle,
 } from "@fluentui/react-components";
 import type { ReactNode } from "react";
+import "./index.css";
 
 type Properties = {
 	intent: "info" | "warning" | "error" | "success";
@@ -20,7 +21,7 @@ export const AlertMessage = ({
 	onClose,
 }: Readonly<Properties>) => {
 	return (
-		<MessageBar intent={intent}>
+		<MessageBar intent={intent} className="alert-message__message-bar">
 			<MessageBarBody>
 				<MessageBarTitle>{title}:</MessageBarTitle>
 				{children}
