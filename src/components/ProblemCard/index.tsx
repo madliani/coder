@@ -26,12 +26,7 @@ export const ProblemCard = ({
 	notes,
 }: Readonly<Properties>) => {
 	return (
-		<Card
-			orientation={orientation}
-			size={size}
-			appearance={appearance}
-			className="problem-card__card"
-		>
+		<Card orientation={orientation} size={size} appearance={appearance}>
 			<Text weight="bold">
 				{num}. {title}
 			</Text>
